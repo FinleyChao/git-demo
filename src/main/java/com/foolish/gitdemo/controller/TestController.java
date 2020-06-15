@@ -1,7 +1,9 @@
 package com.foolish.gitdemo.controller;
-
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Random;
 
 /**
  * @description:
@@ -14,5 +16,12 @@ public class TestController {
     @GetMapping("/test-demo")
     public String test(){
         return "/test-demo/测试分支";
+    }
+
+    @PostMapping("")
+    public String save(){
+        Random random = new Random();
+        int i = random.nextInt();
+        return String.valueOf(i);
     }
 }
