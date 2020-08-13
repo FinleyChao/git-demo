@@ -1,4 +1,6 @@
 package com.foolish.gitdemo.controller;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,5 +25,10 @@ public class TestController {
         Random random = new Random();
         int i = random.nextInt();
         return String.valueOf(i);
+    }
+
+    @GetMapping("")
+    public ResponseEntity getEntity(){
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
