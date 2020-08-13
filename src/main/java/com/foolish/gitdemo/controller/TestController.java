@@ -15,7 +15,7 @@ public class TestController {
 
     @GetMapping("/test-demo")
     public String test(){
-        return "/test-demo/我是一个测试分支";
+        return "/test-demo/测试分支";
     }
 
     @PostMapping("")
