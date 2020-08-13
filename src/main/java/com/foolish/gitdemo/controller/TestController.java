@@ -1,8 +1,11 @@
 package com.foolish.gitdemo.controller;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Random;
 
 /**
  * @description:
@@ -17,8 +20,15 @@ public class TestController {
         return "/test-demo/我是一个pro分支";
     }
 
-    @GetMapping("/{id}")
-    public String findById(@PathVariable Long id){
-        return id.toString();
+    @PostMapping("")
+    public String save(){
+        Random random = new Random();
+        int i = random.nextInt();
+        return String.valueOf(i);
+    }
+
+    @GetMapping("")
+    public ResponseEntity getEntity(){
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
