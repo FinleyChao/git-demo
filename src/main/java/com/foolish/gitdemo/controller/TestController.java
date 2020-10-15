@@ -17,7 +17,7 @@ public class TestController {
 
     @GetMapping("/test-demo")
     public String test(){
-        return "/test-demo/我确定我就是那只披着狼皮的🐏";
+        return "/test-demo/我是一个自定义分支";
     }
 
     @PostMapping("")
