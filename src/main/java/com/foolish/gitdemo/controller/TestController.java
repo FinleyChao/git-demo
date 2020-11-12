@@ -24,6 +24,7 @@ public class TestController {
     public String save(){
         Random random = new Random();
         int i = random.nextInt();
+        System.out.println("1111111");
         return String.valueOf(i);
     }
 
