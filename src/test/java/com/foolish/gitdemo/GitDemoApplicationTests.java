@@ -1,6 +1,5 @@
 package com.foolish.gitdemo;
 
-import com.google.common.collect.HashMultimap;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,13 +15,24 @@ class GitDemoApplicationTests {
 
     @Test
     void contextLoads() {
-        // use guava
-        HashMultimap<String, String> multimap = HashMultimap.create();
-        multimap.put("狗", "大黄");
-        multimap.put("狗", "旺财");
-        multimap.put("猫", "加菲");
-        multimap.put("猫", "汤姆");
-        System.out.println(multimap.get("猫")); // [加菲, 汤姆]
+       /* boolean before = LocalDate.now().isBefore(null);
+        System.out.println(before);*/
+       /* HashMap<String, List> map = new HashMap<>();
+        List key = map.computeIfAbsent("key", k -> Lists.newArrayList());
+        key.add("jiushi");
+        System.out.println(map);*/
+       /*Integer remainder = null;*/
+      /* double remainder = 100.0000D;
+        boolean equals = Objects.equals(100.00D, remainder);
+        System.out.println("equals:" + equals);*/
+
+        String worlds = "The way of the future";
+        List<String> list7 = new ArrayList<>();
+        list7.add(worlds);
+        List<String> list8 = list7.stream().flatMap(str -> Stream.of(str.split(" ")))
+                .filter(world -> world.length() > 0).collect(Collectors.toList());
+        System.out.println("单词:");
+        list8.forEach(System.out::println);
     }
 
 //    @DisplayName("测试断言equals")
@@ -30,7 +40,7 @@ class GitDemoApplicationTests {
     @DisplayName("测试断言equals")
     void test1(){
         var str = "  eee  e";
-        System.out.println("1111111111");
+
         boolean blank = " ".isBlank();
         String repeat = "Java".repeat(3);
         System.out.println(repeat);
